@@ -8,96 +8,79 @@ import jakarta.persistence.MapsId;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="matricula")
-public class Matricula 
+@Table(name = "matricula")
+public class Matricula
 {
 	@EmbeddedId
-    private MatriculaId matriculaId ;
-	
-	@ManyToOne
-    @JoinColumn(name="id_alumno")
-    @MapsId("idAlumno")
-    private Alumno idAlumno ;
+	private MatriculaId matriculaId;
 
-    @ManyToOne
-    @JoinColumn(name="id_asignatura")
-    @MapsId("idAsignatura")
-    private Asignatura idAsignatura ;
-    
-    @ManyToOne
-    @JoinColumn(name="id_curso")
-    @MapsId("idCurso")
-    private Curso idCurso ;
+	@ManyToOne
+	@JoinColumn(name = "id_alumno")
+	@MapsId("idAlumno")
+	private Alumno idAlumno;
+
+	@ManyToOne
+	@JoinColumn(name = "id_asignatura")
+	@MapsId("idAsignatura")
+	private Asignatura idAsignatura;
+
+	@ManyToOne
+	@JoinColumn(name = "id_curso")
+	@MapsId("idCurso")
+	private Curso idCurso;
 
 	/**
 	 * Constructor público por defecto
 	 */
-	public Matricula() 
+	public Matricula()
 	{
 		// Implementación vacía
 	}
 
-    /**
-	 * @return the matriculaId
-	 */
 	public MatriculaId getMatriculaId()
 	{
-		return this.matriculaId ;
+		return this.matriculaId;
 	}
 
-	/**
-	 * @param matriculaId the matriculaId to set
-	 */
 	public void setMatriculaId(MatriculaId matriculaId)
 	{
-		this.matriculaId = matriculaId ;
+		this.matriculaId = matriculaId;
 	}
 
-	/**
-	 * @return the idAlumno
-	 */
-	public Alumno getIdAlumno() 
+	public Alumno getIdAlumno()
 	{
-		return this.idAlumno ;
+		return this.idAlumno;
 	}
 
-	/**
-	 * @return the idAsignatura
-	 */
-	public Asignatura getIdAsignatura() 
+	public Asignatura getIdAsignatura()
 	{
-		return this.idAsignatura ;
+		return this.idAsignatura;
 	}
 
-	/**
-	 * @return the idCurso
-	 */
-	public Curso getIdCurso() 
+	public Curso getIdCurso()
 	{
-		return this.idCurso ;
+		return this.idCurso;
 	}
 
-	/**
-	 * @param idAlumno the idAlumno to set
-	 */
-	public void setIdAlumno(Alumno idAlumno) 
+	public void setIdAlumno(Alumno idAlumno)
 	{
-		this.idAlumno = idAlumno ;
+		this.idAlumno = idAlumno;
 	}
 
-	/**
-	 * @param idAsignatura the idAsignatura to set
-	 */
-	public void setIdAsignatura(Asignatura idAsignatura) 
+	public void setIdAsignatura(Asignatura idAsignatura)
 	{
-		this.idAsignatura = idAsignatura ;
+		this.idAsignatura = idAsignatura;
 	}
 
-	/**
-	 * @param idCurso the idCurso to set
-	 */
-	public void setIdCurso(Curso idCurso) 
+	public void setIdCurso(Curso idCurso)
 	{
-		this.idCurso = idCurso ;
+		this.idCurso = idCurso;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Matricula [matriculaId=" + matriculaId + ", idAlumno=" + idAlumno + ", idAsignatura=" + idAsignatura
+				+ ", idCurso=" + idCurso + "]";
 	}
 }

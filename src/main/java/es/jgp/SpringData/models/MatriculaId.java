@@ -8,48 +8,48 @@ import jakarta.persistence.Embeddable;
 public class MatriculaId implements Serializable
 {
 	/** Serial Version UID */
-	private static final long serialVersionUID = -2149990752410587470L ;
+	private static final long serialVersionUID = -2149990752410587470L;
 
 	/** Atributo - ID Alumno */
-	private Long idAlumno ;
-	
+	private Long idAlumno;
+
 	/** Atributo - ID Asignatura */
-	private Long idAsignatura ;
-	
-    /** Atributo - ID Curso */
-	private Long idCurso ;
+	private Long idAsignatura;
+
+	/** Atributo - ID Curso */
+	private Long idCurso;
 
 	/**
 	 * Constructor público por defecto
 	 */
-    public MatriculaId()
-    {
-    	// Implementación vacía
-    }
+	public MatriculaId()
+	{
+		// Implementación vacía
+	}
 
 	public Long getIdAlumno()
 	{
-		return this.idAlumno ;
+		return this.idAlumno;
 	}
 
 	public void setIdAlumno(Long idAlumno)
 	{
-		this.idAlumno = idAlumno ;
+		this.idAlumno = idAlumno;
 	}
 
 	public Long getIdAsignatura()
 	{
-		return this.idAsignatura ;
+		return this.idAsignatura;
 	}
 
 	public void setIdAsignatura(Long idAsignatura)
 	{
-		this.idAsignatura = idAsignatura ;
+		this.idAsignatura = idAsignatura;
 	}
 
 	public Long getIdCurso()
 	{
-		return this.idCurso ;
+		return this.idCurso;
 	}
 
 	public void setIdCurso(Long idCurso)

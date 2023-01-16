@@ -15,37 +15,37 @@ public class Profesor
 	@Id
 	@Column(length = 10)
 	private Long id;
-	
+
 	@Column(length = 9, unique = true)
 	private String nif;
-	
+
 	@Column(length = 25, nullable = false)
 	private String nombre;
-	
+
 	@Column(length = 50, nullable = false)
 	private String apellido1;
-	
+
 	@Column(length = 50)
 	private String apellido2;
-	
+
 	@Column(length = 25, nullable = false)
 	private String ciudad;
-	
+
 	@Column(length = 50, nullable = false)
 	private String direccion;
-	
+
 	@Column(length = 9)
 	private String telefono;
-	
+
 	@Column(nullable = false)
 	private Date fechaNacimiento;
-	
+
 	@Column(length = 1, nullable = false)
 	private String sexo;
-	
+
 	@ManyToOne
 	private Departamento idDepartamento;
-	
+
 	public Profesor()
 	{
 		// Implemenatación vacía
@@ -53,7 +53,7 @@ public class Profesor
 
 	public Long getId()
 	{
-		return id;
+		return this.id;
 	}
 
 	public void setId(Long id)
@@ -63,7 +63,7 @@ public class Profesor
 
 	public String getNif()
 	{
-		return nif;
+		return this.nif;
 	}
 
 	public void setNif(String nif)
@@ -73,7 +73,7 @@ public class Profesor
 
 	public String getNombre()
 	{
-		return nombre;
+		return this.nombre;
 	}
 
 	public void setNombre(String nombre)
@@ -83,7 +83,7 @@ public class Profesor
 
 	public String getApellido1()
 	{
-		return apellido1;
+		return this.apellido1;
 	}
 
 	public void setApellido1(String apellido1)
@@ -93,7 +93,7 @@ public class Profesor
 
 	public String getApellido2()
 	{
-		return apellido2;
+		return this.apellido2;
 	}
 
 	public void setApellido2(String apellido2)
@@ -103,7 +103,7 @@ public class Profesor
 
 	public String getCiudad()
 	{
-		return ciudad;
+		return this.ciudad;
 	}
 
 	public void setCiudad(String ciudad)
@@ -113,7 +113,7 @@ public class Profesor
 
 	public String getDireccion()
 	{
-		return direccion;
+		return this.direccion;
 	}
 
 	public void setDireccion(String direccion)
@@ -123,7 +123,7 @@ public class Profesor
 
 	public String getTelefono()
 	{
-		return telefono;
+		return this.telefono;
 	}
 
 	public void setTelefono(String telefono)
@@ -133,7 +133,7 @@ public class Profesor
 
 	public Date getFechaNacimiento()
 	{
-		return fechaNacimiento;
+		return this.fechaNacimiento;
 	}
 
 	public void setFechaNacimiento(Date fechaNacimiento)
@@ -143,7 +143,7 @@ public class Profesor
 
 	public String getSexo()
 	{
-		return sexo;
+		return this.sexo;
 	}
 
 	public void setSexo(String sexo)
@@ -153,11 +153,20 @@ public class Profesor
 
 	public Departamento getIdDepartamento()
 	{
-		return idDepartamento;
+		return this.idDepartamento;
 	}
 
 	public void setIdDepartamento(Departamento idDepartamento)
 	{
 		this.idDepartamento = idDepartamento;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Profesor [id=" + id + ", nif=" + nif + ", nombre=" + nombre + ", apellido1=" + apellido1
+				+ ", apellido2=" + apellido2 + ", ciudad=" + ciudad + ", direccion=" + direccion + ", telefono="
+				+ telefono + ", fechaNacimiento=" + fechaNacimiento + ", sexo=" + sexo + ", idDepartamento="
+				+ idDepartamento + "]";
 	}
 }

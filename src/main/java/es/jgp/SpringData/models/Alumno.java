@@ -10,246 +10,167 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="alumno")
-public class Alumno 
+@Table(name = "alumno")
+public class Alumno
 {
 	@Id
 	@Column(length = 10)
-	private Long id ;
-	
+	private Long id;
+
 	@Column(length = 9, unique = true)
-    private String nif ;
-    
+	private String nif;
+
 	@Column(length = 25, nullable = false)
-    private String nombre ;
-    
+	private String nombre;
+
 	@Column(length = 50, nullable = false)
-    private String apellido1 ;
-    
+	private String apellido1;
+
 	@Column(length = 50)
-    private String apellido2 ;
-    
+	private String apellido2;
+
 	@Column(length = 25, nullable = false)
-    private String ciudad ;
-    
+	private String ciudad;
+
 	@Column(length = 50, nullable = false)
-    private String direccion ;
-    
+	private String direccion;
+
 	@Column(length = 9)
-    private String telefono ;
-    
+	private String telefono;
+
 	@Column(nullable = false)
-    private Date fechaNacimiento ;
-    
+	private Date fechaNacimiento;
+
 	@Column(length = 1, nullable = false)
-    private String sexo ;
-    
-	@Column(length = 20, nullable = false)
-    private String tipo ;
-	
+	private String sexo;
+
 	@OneToMany
 	private Set<Matricula> conjuntoMatricula;
-	
+
 	/**
 	 * Constructor por defecto vacío
 	 */
-	public Alumno() 
+	public Alumno()
 	{
 		// Implementación vacía
 	}
 
-	/**
-	 * @return the id
-	 */
-	public Long getId() 
+	public Long getId()
 	{
-		return this.id ;
+		return this.id;
 	}
 
-	/**
-	 * @return the nif
-	 */
-	public String getNif() 
+	public void setId(Long id)
 	{
-		return this.nif ;
+		this.id = id;
 	}
 
-	/**
-	 * @return the nombre
-	 */
-	public String getNombre() 
+	public String getNif()
 	{
-		return this.nombre ;
+		return this.nif;
 	}
 
-	/**
-	 * @return the apellido1
-	 */
-	public String getApellido1() 
+	public void setNif(String nif)
 	{
-		return this.apellido1 ;
+		this.nif = nif;
 	}
 
-	/**
-	 * @return the apellido2
-	 */
-	public String getApellido2() 
+	public String getNombre()
 	{
-		return this.apellido2 ;
+		return this.nombre;
 	}
 
-	/**
-	 * @return the ciudad
-	 */
-	public String getCiudad() 
+	public void setNombre(String nombre)
 	{
-		return this.ciudad ;
+		this.nombre = nombre;
 	}
 
-	/**
-	 * @return the direccion
-	 */
-	public String getDireccion()
+	public String getApellido1()
 	{
-		return this.direccion ;
+		return this.apellido1;
 	}
 
-	/**
-	 * @return the telefono
-	 */
-	public String getTelefono() 
-	{
-		return this.telefono ;
-	}
-
-	/**
-	 * @return the fechaNacimiento
-	 */
-	public Date getFechaNacimiento() 
-	{
-		return this.fechaNacimiento ;
-	}
-
-	/**
-	 * @return the sexo
-	 */
-	public String getSexo() 
-	{
-		return this.sexo ;
-	}
-
-	/**
-	 * @return the tipo
-	 */
-	public String getTipo() 
-	{
-		return this.tipo ;
-	}
-
-	/**
-	 * @return the conjuntoMatricula
-	 */
-	public Set<Matricula> getConjuntoMatricula() 
-	{
-		return this.conjuntoMatricula ;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(Long id) 
-	{
-		this.id = id ;
-	}
-
-	/**
-	 * @param nif the nif to set
-	 */
-	public void setNif(String nif) 
-	{
-		this.nif = nif ;
-	}
-
-	/**
-	 * @param nombre the nombre to set
-	 */
-	public void setNombre(String nombre) 
-	{
-		this.nombre = nombre ;
-	}
-
-	/**
-	 * @param apellido1 the apellido1 to set
-	 */
 	public void setApellido1(String apellido1)
 	{
-		this.apellido1 = apellido1 ;
+		this.apellido1 = apellido1;
 	}
 
-	/**
-	 * @param apellido2 the apellido2 to set
-	 */
-	public void setApellido2(String apellido2) 
+	public String getApellido2()
 	{
-		this.apellido2 = apellido2 ;
+		return this.apellido2;
 	}
 
-	/**
-	 * @param ciudad the ciudad to set
-	 */
-	public void setCiudad(String ciudad) 
+	public void setApellido2(String apellido2)
 	{
-		this.ciudad = ciudad ;
+		this.apellido2 = apellido2;
 	}
 
-	/**
-	 * @param direccion the direccion to set
-	 */
-	public void setDireccion(String direccion) 
+	public String getCiudad()
 	{
-		this.direccion = direccion ;
+		return this.ciudad;
 	}
 
-	/**
-	 * @param telefono the telefono to set
-	 */
-	public void setTelefono(String telefono) 
+	public void setCiudad(String ciudad)
 	{
-		this.telefono = telefono ;
+		this.ciudad = ciudad;
 	}
 
-	/**
-	 * @param fechaNacimiento the fechaNacimiento to set
-	 */
-	public void setFechaNacimiento(Date fechaNacimiento) 
+	public String getDireccion()
 	{
-		this.fechaNacimiento = fechaNacimiento ;
+		return this.direccion;
 	}
 
-	/**
-	 * @param sexo the sexo to set
-	 */
-	public void setSexo(String sexo) 
+	public void setDireccion(String direccion)
 	{
-		this.sexo = sexo ;
+		this.direccion = direccion;
 	}
 
-	/**
-	 * @param tipo the tipo to set
-	 */
-	public void setTipo(String tipo) 
+	public String getTelefono()
 	{
-		this.tipo = tipo ;
+		return this.telefono;
 	}
 
-	/**
-	 * @param conjuntoMatricula the conjuntoMatricula to set
-	 */
-	public void setConjuntoMatricula(Set<Matricula> conjuntoMatricula) 
+	public void setTelefono(String telefono)
 	{
-		this.conjuntoMatricula = conjuntoMatricula ;
+		this.telefono = telefono;
 	}
 
-	
-	
+	public Date getFechaNacimiento()
+	{
+		return this.fechaNacimiento;
+	}
+
+	public void setFechaNacimiento(Date fechaNacimiento)
+	{
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	public String getSexo()
+	{
+		return this.sexo;
+	}
+
+	public void setSexo(String sexo)
+	{
+		this.sexo = sexo;
+	}
+
+	public Set<Matricula> getConjuntoMatricula()
+	{
+		return this.conjuntoMatricula;
+	}
+
+	public void setConjuntoMatricula(Set<Matricula> conjuntoMatricula)
+	{
+		this.conjuntoMatricula = conjuntoMatricula;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Alumno [id=" + id + ", nif=" + nif + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2="
+				+ apellido2 + ", ciudad=" + ciudad + ", direccion=" + direccion + ", telefono=" + telefono
+				+ ", fechaNacimiento=" + fechaNacimiento + ", sexo=" + sexo + ", conjuntoMatricula=" + conjuntoMatricula
+				+ "]";
+	}
 }
