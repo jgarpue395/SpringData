@@ -45,8 +45,7 @@ public class ParseoAsignaturaImpl
 			asignatura.setIdProfesor(this.profesorRepository.findById(Long.valueOf(lineaDelFicheroTroceada[6])).get());
 			asignatura.setIdGrado(this.gradoRepository.findById(Long.valueOf(lineaDelFicheroTroceada[7])).get());
 
-			System.out.println(asignatura);
-			//this.asignaturaRepository.saveAndFlush(asignatura);
+			this.asignaturaRepository.saveAndFlush(asignatura);
 		}
 	}
 }

@@ -42,8 +42,7 @@ public class ParseoAlumnoImpl
 			alumno.setFechaNacimiento(this.crearFechaDesdeString(lineaDelFicheroTroceada[8]));
 			alumno.setSexo(lineaDelFicheroTroceada[9]);
 
-			System.out.println(alumno);
-			//this.alumnoRepository.saveAndFlush(alumno);
+			this.alumnoRepository.saveAndFlush(alumno);
 		}
 	}
 

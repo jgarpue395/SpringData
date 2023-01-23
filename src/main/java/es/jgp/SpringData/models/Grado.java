@@ -1,11 +1,8 @@
 package es.jgp.SpringData.models;
 
-import java.util.Set;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,8 +16,8 @@ public class Grado
 	@Column(length = 100, nullable = false)
 	private String nombre;
 
-	@OneToMany
-	private Set<Asignatura> conjuntoAsignaturas;
+//	@OneToMany
+//	private Set<Asignatura> conjuntoAsignaturas;
 
 	/**
 	 * Constructor por defecto vacío
@@ -50,19 +47,13 @@ public class Grado
 		this.nombre = nombre;
 	}
 
-	public Set<Asignatura> getConjuntoAsignaturas()
-	{
-		return this.conjuntoAsignaturas;
-	}
-
-	public void setConjuntoAsignaturas(Set<Asignatura> conjuntoAsignaturas)
-	{
-		this.conjuntoAsignaturas = conjuntoAsignaturas;
-	}
-
-	@Override
-	public String toString()
-	{
-		return "Grado [id=" + id + ", nombre=" + nombre + ", conjuntoAsignaturas=" + conjuntoAsignaturas + "]";
-	}
+//	public Set<Asignatura> getConjuntoAsignaturas()
+//	{
+//		return this.conjuntoAsignaturas;
+//	}
+//
+//	public void setConjuntoAsignaturas(Set<Asignatura> conjuntoAsignaturas)
+//	{
+//		this.conjuntoAsignaturas = conjuntoAsignaturas;
+//	}
 }

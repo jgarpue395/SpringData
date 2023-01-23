@@ -31,8 +31,7 @@ public class ParseoGradoImpl
 			grado.setId(Long.valueOf(lineaDelFicheroTroceada[0]));
 			grado.setNombre(lineaDelFicheroTroceada[1]);
 
-			System.out.println(grado);
-			//this.gradoRepository.saveAndFlush(grado);
+			this.gradoRepository.saveAndFlush(grado);
 		}
 	}
 }

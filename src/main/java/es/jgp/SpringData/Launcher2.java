@@ -29,7 +29,7 @@ public class Launcher2
 	private static ParseoMatriculaImpl parseoMatriculaImpl = new ParseoMatriculaImpl();
 
 	private static ParseoProfesorImpl parseoProfesorImpl = new ParseoProfesorImpl();
-
+	
 	private static Scanner scanner;
 
 	public static void main(String[] args)

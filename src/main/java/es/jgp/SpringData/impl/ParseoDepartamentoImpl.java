@@ -31,8 +31,7 @@ public class ParseoDepartamentoImpl
 			departamento.setId(Long.valueOf(lineaDelFicheroTroceada[0]));
 			departamento.setNombre(lineaDelFicheroTroceada[1]);
 
-			System.out.println(departamento);
-			//this.departamentoRepository.saveAndFlush(departamento);
+			this.departamentoRepository.saveAndFlush(departamento);
 		}
 	}
 }

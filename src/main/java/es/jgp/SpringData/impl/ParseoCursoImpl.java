@@ -32,8 +32,7 @@ public class ParseoCursoImpl
 			curso.setAnyoInicio(Integer.valueOf(lineaDelFicheroTroceada[1]));
 			curso.setAnyoFin(Integer.valueOf(lineaDelFicheroTroceada[2]));
 
-			System.out.println(curso);
-			//this.cursoRepository.saveAndFlush(curso);
+			this.cursoRepository.saveAndFlush(curso);
 		}
 	}
 }

@@ -47,8 +47,7 @@ public class ParseoProfesorImpl
 			profesor.setSexo(lineaDelFicheroTroceada[9]);
 			profesor.setIdDepartamento(this.departamentoRepository.findById(Long.valueOf(lineaDelFicheroTroceada[10])).get());
 
-			System.out.println(profesor);
-			//this.profesorRepository.saveAndFlush(profesor);
+			this.profesorRepository.saveAndFlush(profesor);
 		}
 	}
 	

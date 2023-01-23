@@ -1,12 +1,9 @@
 package es.jgp.SpringData.models;
 
-import java.util.Set;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -38,8 +35,8 @@ public class Asignatura
 	@ManyToOne
 	private Grado idGrado;
 
-	@OneToMany
-	private Set<Matricula> conjuntoMatricula;
+//	@OneToMany
+//	private Set<Matricula> conjuntoMatricula;
 
 	/**
 	 * Constructor por defecto vacío
@@ -129,21 +126,13 @@ public class Asignatura
 		this.idGrado = idGrado;
 	}
 
-	public Set<Matricula> getConjuntoMatricula()
-	{
-		return this.conjuntoMatricula;
-	}
-
-	public void setConjuntoMatricula(Set<Matricula> conjuntoMatricula)
-	{
-		this.conjuntoMatricula = conjuntoMatricula;
-	}
-
-	@Override
-	public String toString()
-	{
-		return "Asignatura [id=" + id + ", nombre=" + nombre + ", creditos=" + creditos + ", tipo=" + tipo + ", curso="
-				+ curso + ", cuatrimestre=" + cuatrimestre + ", idProfesor=" + idProfesor + ", idGrado=" + idGrado
-				+ ", conjuntoMatricula=" + conjuntoMatricula + "]";
-	}
+//	public Set<Matricula> getConjuntoMatricula()
+//	{
+//		return this.conjuntoMatricula;
+//	}
+//
+//	public void setConjuntoMatricula(Set<Matricula> conjuntoMatricula)
+//	{
+//		this.conjuntoMatricula = conjuntoMatricula;
+//	}
 }

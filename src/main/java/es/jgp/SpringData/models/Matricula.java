@@ -76,11 +76,4 @@ public class Matricula
 	{
 		this.idCurso = idCurso;
 	}
-
-	@Override
-	public String toString()
-	{
-		return "Matricula [matriculaId=" + matriculaId + ", idAlumno=" + idAlumno + ", idAsignatura=" + idAsignatura
-				+ ", idCurso=" + idCurso + "]";
-	}
 }

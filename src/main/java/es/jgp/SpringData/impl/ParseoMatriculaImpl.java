@@ -61,8 +61,7 @@ public class ParseoMatriculaImpl
 
 			matricula.setMatriculaId(matriculaId);
 
-			System.out.println(matricula);
-			//this.matriculaRepository.saveAndFlush(matricula);
+			this.matriculaRepository.saveAndFlush(matricula);
 		}
 	}
 }
