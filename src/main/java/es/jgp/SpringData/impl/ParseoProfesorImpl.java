@@ -16,7 +16,7 @@ import es.jgp.SpringData.utils.ProyectoFinalException;
 
 @Service
 public class ParseoProfesorImpl
-{
+{ 
 	@Autowired
 	private IProfesorRepository profesorRepository;
 
