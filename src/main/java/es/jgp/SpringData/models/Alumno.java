@@ -1,10 +1,12 @@
 package es.jgp.SpringData.models;
 
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -42,8 +44,8 @@ public class Alumno
 	@Column(length = 1, nullable = false)
 	private String sexo;
 
-//	@OneToMany
-//	private Set<Matricula> conjuntoMatricula;
+	@OneToMany(mappedBy = "idAlumno")
+	private List<Matricula> matriculas;
 
 	/**
 	 * Constructor por defecto vacío
@@ -152,14 +154,22 @@ public class Alumno
 	{
 		this.sexo = sexo;
 	}
+	
+	public List<Matricula> getMatriculas()
+	{
+		return matriculas;
+	}
 
-//	public Set<Matricula> getConjuntoMatricula()
-//	{
-//		return this.conjuntoMatricula;
-//	}
-//
-//	public void setConjuntoMatricula(Set<Matricula> conjuntoMatricula)
-//	{
-//		this.conjuntoMatricula = conjuntoMatricula;
-//	}
+	public void setMatriculas(List<Matricula> matriculas)
+	{
+		this.matriculas = matriculas;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Alumno [id=" + id + ", nif=" + nif + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2="
+				+ apellido2 + ", ciudad=" + ciudad + ", direccion=" + direccion + ", telefono=" + telefono
+				+ ", fechaNacimiento=" + fechaNacimiento + ", sexo=" + sexo + "]";
+	}
 }

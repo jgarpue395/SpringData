@@ -1,8 +1,11 @@
 package es.jgp.SpringData.models;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,6 +18,9 @@ public class Departamento
 
 	@Column(length = 50, nullable = false)
 	private String nombre;
+	
+	@OneToMany(mappedBy = "idDepartamento")
+	private List<Profesor> profesores;
 
 	/**
 	 * Constructor por defecto vacío
@@ -42,5 +48,21 @@ public class Departamento
 	public void setNombre(String nombre)
 	{
 		this.nombre = nombre;
+	}
+	
+	public List<Profesor> getProfesores()
+	{
+		return this.profesores;
+	}
+
+	public void setProfesores(List<Profesor> profesores)
+	{
+		this.profesores = profesores;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Departamento [id=" + id + ", nombre=" + nombre + "]";
 	}
 }

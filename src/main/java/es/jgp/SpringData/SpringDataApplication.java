@@ -9,6 +9,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import es.jgp.SpringData.impl.Consultas;
+import es.jgp.SpringData.impl.ConsultasQuery;
 import es.jgp.SpringData.impl.ParseoAlumnoImpl;
 import es.jgp.SpringData.impl.ParseoAsignaturaImpl;
 import es.jgp.SpringData.impl.ParseoCursoImpl;
@@ -42,6 +44,12 @@ public class SpringDataApplication implements CommandLineRunner
 
 	@Autowired
 	private ParseoProfesorImpl parseoProfesorImpl;
+	
+	@Autowired
+	Consultas consultas;
+	
+	@Autowired
+	ConsultasQuery consultasQuery;
 
 	private Scanner scanner;
 	
@@ -53,43 +61,46 @@ public class SpringDataApplication implements CommandLineRunner
 	@Override
 	public void run(String... args) throws Exception
 	{
-		try
-		{
-			this.scanner = new Scanner(new File("src" + File.separator + "main" + File.separator + "resources"
-					+ File.separator + Constantes.NOMBRE_FICHERO_ALUMNO));
-			this.parseoAlumnoImpl.parseaFichero(scanner);
-
-			this.scanner = new Scanner(new File("src" + File.separator + "main" + File.separator + "resources"
-					+ File.separator + Constantes.NOMBRE_FICHERO_DEPARTAMENTO));
-			this.parseoDepartamentoImpl.parseaFichero(scanner);
-
-			this.scanner = new Scanner(new File("src" + File.separator + "main" + File.separator + "resources"
-					+ File.separator + Constantes.NOMBRE_FICHERO_PROFESOR));
-			this.parseoProfesorImpl.parseaFichero(scanner);
-
-			this.scanner = new Scanner(new File("src" + File.separator + "main" + File.separator + "resources"
-					+ File.separator + Constantes.NOMBRE_FICHERO_GRADO));
-			this.parseoGradoImpl.parseaFichero(scanner);
-
-			this.scanner = new Scanner(new File("src" + File.separator + "main" + File.separator + "resources"
-					+ File.separator + Constantes.NOMBRE_FICHERO_ASIGNATURA));
-			this.parseoAsignaturaImpl.parseaFichero(scanner);
-
-			this.scanner = new Scanner(new File("src" + File.separator + "main" + File.separator + "resources"
-					+ File.separator + Constantes.NOMBRE_FICHERO_CURSO));
-			this.parseoCursoImpl.parseaFichero(scanner);
-
-			this.scanner = new Scanner(new File("src" + File.separator + "main" + File.separator + "resources"
-					+ File.separator + Constantes.NOMBRE_FICHERO_MATRICULA));
-			this.parseoMatriculaImpl.parseaFichero(scanner);
-		}
-		catch (ProyectoFinalException proyectoFinalException)
-		{
-			proyectoFinalException.printStackTrace();
-		}
-		catch (FileNotFoundException fileNotFoundException)
-		{
-			fileNotFoundException.printStackTrace();
-		}
+//		try
+//		{
+//			this.scanner = new Scanner(new File("src" + File.separator + "main" + File.separator + "resources"
+//					+ File.separator + Constantes.NOMBRE_FICHERO_ALUMNO));
+//			this.parseoAlumnoImpl.parseaFichero(scanner);
+//
+//			this.scanner = new Scanner(new File("src" + File.separator + "main" + File.separator + "resources"
+//					+ File.separator + Constantes.NOMBRE_FICHERO_DEPARTAMENTO));
+//			this.parseoDepartamentoImpl.parseaFichero(scanner);
+//
+//			this.scanner = new Scanner(new File("src" + File.separator + "main" + File.separator + "resources"
+//					+ File.separator + Constantes.NOMBRE_FICHERO_PROFESOR));
+//			this.parseoProfesorImpl.parseaFichero(scanner);
+//
+//			this.scanner = new Scanner(new File("src" + File.separator + "main" + File.separator + "resources"
+//					+ File.separator + Constantes.NOMBRE_FICHERO_GRADO));
+//			this.parseoGradoImpl.parseaFichero(scanner);
+//
+//			this.scanner = new Scanner(new File("src" + File.separator + "main" + File.separator + "resources"
+//					+ File.separator + Constantes.NOMBRE_FICHERO_ASIGNATURA));
+//			this.parseoAsignaturaImpl.parseaFichero(scanner);
+//
+//			this.scanner = new Scanner(new File("src" + File.separator + "main" + File.separator + "resources"
+//					+ File.separator + Constantes.NOMBRE_FICHERO_CURSO));
+//			this.parseoCursoImpl.parseaFichero(scanner);
+//
+//			this.scanner = new Scanner(new File("src" + File.separator + "main" + File.separator + "resources"
+//					+ File.separator + Constantes.NOMBRE_FICHERO_MATRICULA));
+//			this.parseoMatriculaImpl.parseaFichero(scanner);
+//		}
+//		catch (ProyectoFinalException proyectoFinalException)
+//		{
+//			proyectoFinalException.printStackTrace();
+//		}
+//		catch (FileNotFoundException fileNotFoundException)
+//		{
+//			fileNotFoundException.printStackTrace();
+//		}
+		
+		//this.consultas.printConsulta();
+		this.consultasQuery.printConsulta();
 	}
 }

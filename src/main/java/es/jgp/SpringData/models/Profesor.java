@@ -5,6 +5,7 @@ import java.util.Date;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -44,6 +45,7 @@ public class Profesor
 	private String sexo;
 
 	@ManyToOne
+	@JoinColumn(name = "id_departamento_id")
 	private Departamento idDepartamento;
 
 	public Profesor()
@@ -159,5 +161,14 @@ public class Profesor
 	public void setIdDepartamento(Departamento idDepartamento)
 	{
 		this.idDepartamento = idDepartamento;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Profesor [id=" + id + ", nif=" + nif + ", nombre=" + nombre + ", apellido1=" + apellido1
+				+ ", apellido2=" + apellido2 + ", ciudad=" + ciudad + ", direccion=" + direccion + ", telefono="
+				+ telefono + ", fechaNacimiento=" + fechaNacimiento + ", sexo=" + sexo + ", idDepartamento="
+				+ idDepartamento + "]";
 	}
 }
